@@ -7,24 +7,32 @@
     initial-scale=1, maximum-scale=1,minimum-scale=1">
     <link rel="stylesheet" href="Recursos/MisEstilos.css">
   </head>
-  <script>
-		  function validarEmail(valor) {
-              if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
-              alert("La dirección de email " + valor + " es correcta.");
-              } else {
-              alert("La dirección de email es incorrecta.");
-              }
-             } 
-	  </script>
+	<script>
+    function validacion() {
+		valor = document.getElementById("telefono").value;
+    if( isNaN(valor) ) {
+    return false;
+    }
+    valor = document.getElementById("telefono").value;
+    if( !(/^\d{10}$/.test(valor)) ) {
+    return false;
+    }
+		valor = document.getElementById("email").value;
+    if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(valor)) ) {
+    return false;
+    }  
+    return true;
+   } 
+	</script>
   <body>
-    <form class="" action="" method="post" name="FormContacto">
+    <form class="" action="" method="post" name="FormContacto" onsubmit="return validacion()">
       <h2>Contacto</h2>
       <p>Correo Electronico</p>
-      <input type="text" name="txtEmail" placeholder="&#9993; usuario@mail.com" required >
+      <input type="email" name="txtEmail" placeholder="&#9993; usuario@gmail.com" required id="email">
       <p>Fecha de Nacimiento</p>
-      <input type="date" name="txtFecha">
+      <input type="date" name="txtFecha" >
       <p>Teléfono</p>
-      <input type="text" name="txtTelefono" placeholder="&#9742; Telefono" required>
+      <input type="tel" name="txtTelefono" placeholder="&#9742; Telefono"  required id="telefono">
       <input type="submit" name="BtnEnviar" value="Enviar">
     </form>
   </body>
