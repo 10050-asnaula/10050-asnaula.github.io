@@ -7,33 +7,22 @@
     initial-scale=1, maximum-scale=1,minimum-scale=1">
     <link rel="stylesheet" href="Recursos/MisEstilos.css">
   </head>
-	<script>
-    function validacion() {
-		valor = document.getElementById("telefono").value;
-    if( isNaN(valor) ) {
-    return false;
-    }
-    valor = document.getElementById("telefono").value;
-    if( !(/^\d{10}$/.test(valor)) ) {
-    return false;
-    }
-		valor = document.getElementById("email").value;
-    if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(valor)) ) {
-    return false;
-    }  
-    return true;
-   } 
-	</script>
+
   <body>
-    <form class="" action="" method="post" name="FormContacto" onsubmit="return validacion()">
+
+    <form class="" action="" method="post" onsubmit="validar()" name="FormContacto">
       <h2>Contacto</h2>
       <p>Correo Electronico</p>
-      <input type="email" name="txtEmail" placeholder="&#9993; usuario@gmail.com" required id="email">
+      <input type="email" id="email" name="txtEmail" placeholder="&#9993; usuario@mail.com" required>
       <p>Fecha de Nacimiento</p>
-      <input type="date" name="txtFecha" >
+      <input type="date" name="txtFecha" required>
       <p>Teléfono</p>
-      <input type="tel" name="txtTelefono" placeholder="&#9742; Telefono"  required id="telefono">
-      <input type="submit" name="BtnEnviar" value="Enviar">
+      <input type="text" id="telefono" name="txtTelefono" placeholder="&#9742; Telefono" required>
+      <input type="button" name="BtnEnviar" value="Enviar" id="btn" onclick="deshabilitar()">
     </form>
+
+    <script src="../Solucion_CODIGO/Recursos/validaciones.js"></script>
+
   </body>
+  
 </html>
