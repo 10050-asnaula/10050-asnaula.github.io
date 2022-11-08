@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Login</title>
+    <meta name="viewport" content="width=device-width, user-scaleble=no,
+    initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <link rel="stylesheet" href="Recursos/MisEstilos.css">
+  </head>
+  <script>
+		  function validarEmail(valor) {
+              if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
+              alert("La dirección de email " + valor + " es correcta.");
+              } else {
+              alert("La dirección de email es incorrecta.");
+              }
+             } 
+	  </script>
+  <body>
+    <form class="" action="" method="post" name="FormContacto">
+      <h2>Contacto</h2>
+      <p>Correo Electronico</p>
+      <input type="text" name="txtEmail" placeholder="&#9993; usuario@mail.com" required >
+      <p>Fecha de Nacimiento</p>
+      <input type="date" name="txtFecha">
+      <p>Teléfono</p>
+      <input type="text" name="txtTelefono" placeholder="&#9742; Telefono" required>
+      <input type="submit" name="BtnEnviar" value="Enviar">
+    </form>
+  </body>
+</html>
